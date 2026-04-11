@@ -1,0 +1,8 @@
+# Bundler — local gem installs exceed GitHub file limits; never commit
+/vendor/bundle/
+
+.bundle/
+.jekyll-cache/
+.sass-cache/
+.tweet-cache/
+.parse_deps/
