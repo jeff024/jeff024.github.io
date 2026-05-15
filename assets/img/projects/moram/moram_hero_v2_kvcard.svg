@@ -429,12 +429,12 @@
   <g class="tok tok-T2-1" transform="translate(355, 468)">
     <rect class="atom atom-t2" width="50" height="36" rx="5"/>
     <text class="tok-label" x="25" y="24" text-anchor="middle">x</text>
-    <text class="tok-note tok-note-reuse" x="25" y="56" text-anchor="middle">&#x2248; T1, reuses old slot</text>
+    <text class="tok-note tok-note-reuse" x="25" y="56" text-anchor="middle">similar to T1, reuses slot</text>
   </g>
   <g class="tok tok-T2-2" transform="translate(355, 468)">
     <rect class="atom atom-t2" width="50" height="36" rx="5"/>
     <text class="tok-label" x="25" y="24" text-anchor="middle">x</text>
-    <text class="tok-note tok-note-reuse" x="25" y="56" text-anchor="middle">&#x2248; T1, reuses old slot</text>
+    <text class="tok-note tok-note-reuse" x="25" y="56" text-anchor="middle">similar to T1, reuses slot</text>
   </g>
   <g class="tok tok-T2-3" transform="translate(355, 468)">
     <rect class="atom atom-t2" width="50" height="36" rx="5"/>
@@ -444,13 +444,13 @@
   <g class="tok tok-T2-4" transform="translate(355, 468)">
     <rect class="atom atom-t2" width="50" height="36" rx="5"/>
     <text class="tok-label" x="25" y="24" text-anchor="middle">x</text>
-    <text class="tok-note tok-note-reuse" x="25" y="56" text-anchor="middle">&#x2248; T1, reuses old slot</text>
+    <text class="tok-note tok-note-reuse" x="25" y="56" text-anchor="middle">similar to T1, reuses slot</text>
   </g>
   <!-- T3 tokens — 3 reuse old memory only, 1 novel -->
   <g class="tok tok-T3-1" transform="translate(355, 468)">
     <rect class="atom atom-t3" width="50" height="36" rx="5"/>
     <text class="tok-label" x="25" y="24" text-anchor="middle">x</text>
-    <text class="tok-note tok-note-reuse" x="25" y="56" text-anchor="middle">&#x2248; T1/T2, reuses old slot</text>
+    <text class="tok-note tok-note-reuse" x="25" y="56" text-anchor="middle">similar to T1/T2, reuses slot</text>
   </g>
   <g class="tok tok-T3-2" transform="translate(355, 468)">
     <rect class="atom atom-t3" width="50" height="36" rx="5"/>
@@ -460,12 +460,12 @@
   <g class="tok tok-T3-3" transform="translate(355, 468)">
     <rect class="atom atom-t3" width="50" height="36" rx="5"/>
     <text class="tok-label" x="25" y="24" text-anchor="middle">x</text>
-    <text class="tok-note tok-note-reuse" x="25" y="56" text-anchor="middle">&#x2248; T1/T2, reuses old slot</text>
+    <text class="tok-note tok-note-reuse" x="25" y="56" text-anchor="middle">similar to T1/T2, reuses slot</text>
   </g>
   <g class="tok tok-T3-4" transform="translate(355, 468)">
     <rect class="atom atom-t3" width="50" height="36" rx="5"/>
     <text class="tok-label" x="25" y="24" text-anchor="middle">x</text>
-    <text class="tok-note tok-note-reuse" x="25" y="56" text-anchor="middle">&#x2248; T1/T2, reuses old slot</text>
+    <text class="tok-note tok-note-reuse" x="25" y="56" text-anchor="middle">similar to T1/T2, reuses slot</text>
   </g>
 
   <!-- CENTER: Transformer (canonical block + ghost stack) — FLOW BOTTOM-TO-TOP -->
