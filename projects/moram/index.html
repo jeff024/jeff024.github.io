@@ -57,7 +57,7 @@
           </div>
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>University of New South Wales,</span>
-            <span class="author-block"><sup>2</sup>CSIRO’s Data61</span>
+            <span class="author-block"><sup>2</sup>CSIRO</span>
           </div>
           <div class="is-size-7 has-text-centered" style="margin-top:0.35rem;"><sup>*</sup> Corresponding author.</div>
           <div class="column has-text-centered" style="margin-top:0.75rem;">
@@ -94,28 +94,12 @@
 </section>
 
 <section class="hero teaser">
-  <!-- Animated explainer breaks out of the is-max-desktop container so the figure can render larger -->
   <div style="margin:1.75rem auto 0;padding:0 1.25rem;width:100%;max-width:1280px;box-sizing:border-box;">
     <figure class="image" style="margin:0;width:100%;">
-      <img src="/assets/img/projects/moram/moram_explainer.svg"
-           alt="Animated comparison: MoE-LoRA's three causal pathologies (intra-expert interference, inter-expert redundancy, routing collapse) vs. MoRAM's three benefits (per-atom specialization, knowledge reuse, forgetting mitigation), framed as a linear associative memory of rank-1 key-value atoms."
+      <img src="/assets/img/projects/moram/moram_hero_v2_kvcard.svg"
+           alt="Animated MoRAM overview: a transformer with per-module parametric memory banks that grow across sequential tasks, showing per-token sparse retrieval routing to K/V memory slots."
            style="width:100%;height:auto;display:block;">
     </figure>
-    <p class="moram-caption" style="max-width:960px;margin:0.875rem auto 0;text-align:left;">
-      <strong>Top — MoE-LoRA.</strong> Adding a new rank-\(r\) expert per task is convenient, but the expert is treated as an indivisible block. Three coupled pathologies follow:
-      <strong>(①) intra-expert inter-rank interference</strong> — within an expert, only a few of the \(r\) ranks match the input while the rest co-fire as noise;
-      <strong>(②) inter-expert redundancy</strong> — to mask ①, the router learns to co-activate a duplicate expert on the same input, wasting capacity;
-      <strong>(③) routing collapse</strong> — at inference, overlapping experts and an external router make routing ambiguous, driving catastrophic forgetting on prior tasks.
-    </p>
-    <p class="moram-caption" style="max-width:960px;margin:0.625rem auto 0;text-align:left;">
-      <strong>Bottom — MoRAM.</strong> Each task adds \(r\) rank-1 atoms <em>little by little</em>, and the LoRA update is reframed as a linear associative memory \(\Delta\mathbf{W}=\sum_{i}\mathbf{B}_{i}\mathbf{A}_{i}^{\top}\) — each atom is a key–value entry. <strong>Self-activation</strong> \(s_{i}=\mathbf{A}_{i}\!\cdot\!\mathbf{x}\) selects matched memories without any router, mitigating each pathology one-for-one:
-      <strong>(①) per-atom specialization</strong> — rank-1 atoms either fire or stay silent, eliminating within-expert noise;
-      <strong>(②) knowledge reuse</strong> — atoms learned on earlier tasks re-fire on related new inputs, so no duplicate experts are needed;
-      <strong>(③) forgetting mitigation</strong> — frozen \(\mathbf{A}_{i},\mathbf{B}_{i}\) keep prior atoms reachable by their own keys, so capacity grows without rewriting old memory.
-    </p>
-    <p class="moram-caption" style="max-width:960px;margin:0.625rem auto 0;text-align:left;">
-      <strong>Takeaway.</strong> Continual learning is reframed as <strong>content-addressable retrieval over a memory bank that grows little by little</strong> — no router, no expert duplication, no overwriting of past knowledge.
-    </p>
   </div>
 </section>
 
@@ -140,12 +124,27 @@
       <div class="column is-four-fifths">
         <div class="content has-text-justified publication-body">
           <h2 class="title is-3">Current Pitfalls</h2>
-          <p><strong>Parameter-efficient fine-tuning</strong> with <strong>LoRA (Fig. 1(a))</strong> injects adaptation as a single dense low-rank update on top of frozen pre-trained weights. Under a continual stream of tasks, editing that shared subspace for the new task perturbs the representation geometry relied on by earlier tasks, so plasticity and stability trade off sharply.</p>
-          <p><strong>MoE-LoRA (Fig. 1(b))</strong> reduces forgetting by freezing older adapters and routing each input to a sparse set of task-specific experts, but each expert is still a <strong>coarse</strong> rank-\(r\) LoRA treated as an indivisible unit. That encourages interference within experts, redundant capacity, and an external router that must discriminate overlapping experts — routing ambiguity and retrieval collapse worsen as experts accumulate.</p>
-          <p><strong>MoRAM (Fig. 1(c))</strong> learns <strong>atomic rank-1</strong> memory experts incrementally while freezing ranks from past tasks, and <strong>combines</strong> all atoms with a <strong>sparse, input-dependent mixture</strong> whose scores come from each atom’s intrinsic key — fine-tuning of pre-trained weights becomes fine-grained rank-1 memory atom retrieval instead of coarse-grained routing by an auxiliary module.</p>
-          <figure class="image" style="margin:1rem 0;"><img src="/assets/img/projects/moram/fig1.png" alt="Figure 1: (a) LoRA, (b) MoE-LoRA, (c) MoRAM"></figure>
-          <p class="moram-caption"><em>Figure 1.</em> Conceptual illustration of continual learning with <strong>(a)</strong> LoRA, <strong>(b)</strong> MoE-LoRA, and <strong>(c)</strong> MoRAM (ours).</p>
+          <p><strong>Top — MoE-LoRA.</strong> Adding a new rank-\(r\) expert per task is convenient, but the expert is treated as an indivisible block. Three coupled pitfalls follow:
+            <strong>(①) intra-expert inter-rank interference</strong> — within an expert, only a few of the \(r\) ranks match the input while the rest co-fire as noise;
+            <strong>(②) inter-expert redundancy</strong> — to mask ①, the router learns to co-activate a duplicate expert on the same input, wasting capacity;
+            <strong>(③) routing collapse</strong> — at inference, overlapping experts and an external router make routing ambiguous, driving catastrophic forgetting on prior tasks.
+          </p>
+          <p><strong>Bottom — MoRAM.</strong> Each task <em>appends</em> \(r\) rank-1 atoms to the memory bank <em>little by little</em>; the LoRA update is reframed as a linear associative memory \(\Delta\mathbf{W}=\sum_{i}w_{i}\mathbf{B}_{i}\mathbf{A}_{i}^{\top}\) where each atom is a key–value entry. <strong>Self-activation</strong> \(s_{i}=\mathbf{A}_{i}\!\cdot\!\mathbf{x}\) scores every atom in parallel; a <strong>sparse top-\(k\) mask</strong> keeps only the most relevant; <strong>threshold pruning</strong> \(s_{i}\!\geq\!\delta\) drops the weakest survivors. The surviving sparse mixture mitigates each pitfall one-for-one:
+            <strong>(①) per-atom specialization</strong> — rank-1 atoms either fire or stay silent, eliminating within-expert noise;
+            <strong>(②) knowledge reuse</strong> — atoms learned on earlier tasks re-fire on related new inputs, so no duplicate experts are needed;
+            <strong>(③) forgetting mitigation</strong> — frozen \(\mathbf{A}_{i},\mathbf{B}_{i}\) keep prior atoms reachable by their own keys, so capacity grows without rewriting old memory.
+          </p>
         </div>
+      </div>
+    </div>
+    <figure class="image" style="margin:1rem 0;width:100%;">
+      <img src="/assets/img/projects/moram/moram_explainer.svg"
+           alt="Animated comparison: MoE-LoRA’s three pitfalls (intra-expert interference, inter-expert redundancy, routing collapse) vs. MoRAM’s three benefits (per-atom specialization, knowledge reuse, forgetting mitigation)."
+           style="width:100%;height:auto;display:block;">
+    </figure>
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <p class="moram-caption"><em>Figure 1.</em> Animated comparison of MoE-LoRA pitfalls vs. MoRAM solutions. See the paper for full analysis.</p>
       </div>
     </div>
   </div>
