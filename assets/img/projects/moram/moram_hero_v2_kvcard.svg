@@ -203,6 +203,11 @@
       .tok-note  { font-size: 21px; font-weight: 600; fill: #92400e; }
       .tok-note-reuse { fill: #6d28d9; }
 
+      .route-note { opacity: 0; animation: route-note 100s infinite linear; }
+      @keyframes route-note {
+        0%,24%{opacity:0} 25%,66%{opacity:1} 68%,100%{opacity:0}
+      }
+
       /* === Routing paths === */
       .route {
         fill: none;
@@ -424,43 +429,43 @@
   <g class="tok tok-T2-1" transform="translate(355, 468)">
     <rect class="atom atom-t2" width="50" height="36" rx="5"/>
     <text class="tok-label" x="25" y="24" text-anchor="middle">x</text>
-    <text class="tok-note tok-note-reuse" x="25" y="56" text-anchor="middle">reuses T1 memory</text>
+    <text class="tok-note tok-note-reuse" x="25" y="56" text-anchor="middle">&#x2248; T1, reuses old slot</text>
   </g>
   <g class="tok tok-T2-2" transform="translate(355, 468)">
     <rect class="atom atom-t2" width="50" height="36" rx="5"/>
     <text class="tok-label" x="25" y="24" text-anchor="middle">x</text>
-    <text class="tok-note tok-note-reuse" x="25" y="56" text-anchor="middle">reuses T1 memory</text>
+    <text class="tok-note tok-note-reuse" x="25" y="56" text-anchor="middle">&#x2248; T1, reuses old slot</text>
   </g>
   <g class="tok tok-T2-3" transform="translate(355, 468)">
     <rect class="atom atom-t2" width="50" height="36" rx="5"/>
     <text class="tok-label" x="25" y="24" text-anchor="middle">x</text>
-    <text class="tok-note" x="25" y="56" text-anchor="middle">trains new memory</text>
+    <text class="tok-note" x="25" y="56" text-anchor="middle">novel, trains new slot</text>
   </g>
   <g class="tok tok-T2-4" transform="translate(355, 468)">
     <rect class="atom atom-t2" width="50" height="36" rx="5"/>
     <text class="tok-label" x="25" y="24" text-anchor="middle">x</text>
-    <text class="tok-note tok-note-reuse" x="25" y="56" text-anchor="middle">reuses T1 memory</text>
+    <text class="tok-note tok-note-reuse" x="25" y="56" text-anchor="middle">&#x2248; T1, reuses old slot</text>
   </g>
   <!-- T3 tokens — 3 reuse old memory only, 1 novel -->
   <g class="tok tok-T3-1" transform="translate(355, 468)">
     <rect class="atom atom-t3" width="50" height="36" rx="5"/>
     <text class="tok-label" x="25" y="24" text-anchor="middle">x</text>
-    <text class="tok-note tok-note-reuse" x="25" y="56" text-anchor="middle">reuses T1+T2 memory</text>
+    <text class="tok-note tok-note-reuse" x="25" y="56" text-anchor="middle">&#x2248; T1/T2, reuses old slot</text>
   </g>
   <g class="tok tok-T3-2" transform="translate(355, 468)">
     <rect class="atom atom-t3" width="50" height="36" rx="5"/>
     <text class="tok-label" x="25" y="24" text-anchor="middle">x</text>
-    <text class="tok-note" x="25" y="56" text-anchor="middle">trains new memory</text>
+    <text class="tok-note" x="25" y="56" text-anchor="middle">novel, trains new slot</text>
   </g>
   <g class="tok tok-T3-3" transform="translate(355, 468)">
     <rect class="atom atom-t3" width="50" height="36" rx="5"/>
     <text class="tok-label" x="25" y="24" text-anchor="middle">x</text>
-    <text class="tok-note tok-note-reuse" x="25" y="56" text-anchor="middle">reuses T1+T2 memory</text>
+    <text class="tok-note tok-note-reuse" x="25" y="56" text-anchor="middle">&#x2248; T1/T2, reuses old slot</text>
   </g>
   <g class="tok tok-T3-4" transform="translate(355, 468)">
     <rect class="atom atom-t3" width="50" height="36" rx="5"/>
     <text class="tok-label" x="25" y="24" text-anchor="middle">x</text>
-    <text class="tok-note tok-note-reuse" x="25" y="56" text-anchor="middle">reuses T1+T2 memory</text>
+    <text class="tok-note tok-note-reuse" x="25" y="56" text-anchor="middle">&#x2248; T1/T2, reuses old slot</text>
   </g>
 
   <!-- CENTER: Transformer (canonical block + ghost stack) — FLOW BOTTOM-TO-TOP -->
@@ -541,6 +546,11 @@
     <text class="sim-module-sub sim-keys-T2" x="900" y="214" text-anchor="middle">via memory keys K&#x2081; ... K&#x2088;</text>
     <text class="sim-module-sub sim-keys-T3" x="900" y="214" text-anchor="middle">via memory keys K&#x2081; ... K&#x2081;&#x2082;</text>
   </g>
+
+  <!-- Annotation: why tokens route to old slots -->
+  <text class="route-note" x="900" y="232" text-anchor="middle"
+        font-size="13" font-style="italic" fill="#64748b"
+        >tokens semantically similar to earlier tasks &#x2192; routed to existing slots</text>
 
   <!-- Row dividers (dashed, between task groups) — appear with the task they separate -->
   <line class="bank-row-divider row-grow-T2" x1="635" y1="290" x2="1165" y2="290"/>
