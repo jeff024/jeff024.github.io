@@ -240,7 +240,7 @@
 
       /* === Bottom title === */
       .tagline-acc { fill: #ea580c; font-weight: 800; }
-      .tagline     { font-size: 14px; font-weight: 800; fill: #0f172a; letter-spacing: -0.005em; }
+      .tagline     { font-size: 17px; font-weight: 800; fill: #0f172a; letter-spacing: -0.005em; }
     ]]></style>
     <marker id="arr-r" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
       <polygon points="0 0, 8 4, 0 8" fill="#475569"/>
@@ -372,7 +372,8 @@
        and the curve at y=195 needs the space clear to be visible. -->
 
   <!-- ====================== TOP TITLE ====================== -->
-  <text class="tagline" x="425" y="58" text-anchor="middle">
-    <tspan class="tagline-acc">MoRAM</tspan> &#x2014; Augmenting the Foundation Model with a Little-by-Little Growing Mixture of Rank-1 Key&#x2013;Value Memories
+  <text class="tagline" x="425" y="50" text-anchor="middle">
+    <tspan x="425"><tspan class="tagline-acc">MoRAM</tspan> &#x2014; Augmenting the Foundation Model</tspan>
+    <tspan x="425" dy="21">with a Little-by-Little Growing Mixture of Rank-1 Key&#x2013;Value Memories</tspan>
   </text>
 </svg>

@@ -109,10 +109,10 @@
          width = w × cell width). Values reflect MoRAM-style sparse top-k:
          most atoms idle at ~0.08; the 1–2 selected atoms spike to ~0.5–1.0
          within each token window; sums approximate 1.0 across revealed atoms. */
-      .atom-weight-bar-T1-1 { animation: w-T1-1 15s infinite linear; }
-      .atom-weight-bar-T1-2 { animation: w-T1-2 15s infinite linear; }
-      .atom-weight-bar-T1-3 { animation: w-T1-3 15s infinite linear; }
-      .atom-weight-bar-T1-4 { animation: w-T1-4 15s infinite linear; }
+      .atom-weight-bar-T1-1 { animation: w-T1-1 40s infinite linear; }
+      .atom-weight-bar-T1-2 { animation: w-T1-2 40s infinite linear; }
+      .atom-weight-bar-T1-3 { animation: w-T1-3 40s infinite linear; }
+      .atom-weight-bar-T1-4 { animation: w-T1-4 40s infinite linear; }
       /* Full top-k coverage plan (top-1 + top-2/3/4 each across cases a/b/c):
          T1-tok1 top-1 (c):    T1-1 (0.95)
          T1-tok2 top-2 (c):    T1-2 (0.65), T1-3 (0.35)
@@ -178,10 +178,10 @@
         45%,80%  { transform: scaleX(0.05); }
         82%,100% { transform: scaleX(0); }
       }
-      .atom-weight-bar-T2-1 { animation: w-T2-1 15s infinite linear; }
-      .atom-weight-bar-T2-2 { animation: w-T2-2 15s infinite linear; }
-      .atom-weight-bar-T2-3 { animation: w-T2-3 15s infinite linear; }
-      .atom-weight-bar-T2-4 { animation: w-T2-4 15s infinite linear; }
+      .atom-weight-bar-T2-1 { animation: w-T2-1 40s infinite linear; }
+      .atom-weight-bar-T2-2 { animation: w-T2-2 40s infinite linear; }
+      .atom-weight-bar-T2-3 { animation: w-T2-3 40s infinite linear; }
+      .atom-weight-bar-T2-4 { animation: w-T2-4 40s infinite linear; }
       @keyframes w-T2-1 {
         0%,24%   { transform: scaleX(0); }
         25%,30%  { transform: scaleX(0.05); }
@@ -218,10 +218,10 @@
         62%,80%  { transform: scaleX(0.05); }
         82%,100% { transform: scaleX(0); }
       }
-      .atom-weight-bar-T3-1 { animation: w-T3-1 15s infinite linear; }
-      .atom-weight-bar-T3-2 { animation: w-T3-2 15s infinite linear; }
-      .atom-weight-bar-T3-3 { animation: w-T3-3 15s infinite linear; }
-      .atom-weight-bar-T3-4 { animation: w-T3-4 15s infinite linear; }
+      .atom-weight-bar-T3-1 { animation: w-T3-1 40s infinite linear; }
+      .atom-weight-bar-T3-2 { animation: w-T3-2 40s infinite linear; }
+      .atom-weight-bar-T3-3 { animation: w-T3-3 40s infinite linear; }
+      .atom-weight-bar-T3-4 { animation: w-T3-4 40s infinite linear; }
       @keyframes w-T3-1 {
         0%,46%   { transform: scaleX(0); }
         47%      { transform: scaleX(0.05); }
@@ -269,14 +269,14 @@
       .sim-module-box { fill: #fffbeb; stroke: #f97316; stroke-width: 1.4; stroke-dasharray: 5 3; }
       .sim-module-label { font-size: 20px; font-weight: 800; fill: #92400e; letter-spacing: 0.03em; }
       .sim-module-sub { font-size: 13px; font-weight: 600; fill: #78716c; font-style: italic; opacity: 0; }
-      .sim-keys-T1 { animation: skeys-T1 15s infinite linear; }
-      .sim-keys-T2 { animation: skeys-T2 15s infinite linear; }
-      .sim-keys-T3 { animation: skeys-T3 15s infinite linear; }
+      .sim-keys-T1 { animation: skeys-T1 40s infinite linear; }
+      .sim-keys-T2 { animation: skeys-T2 40s infinite linear; }
+      .sim-keys-T3 { animation: skeys-T3 40s infinite linear; }
       @keyframes skeys-T1 { 0%,2%{opacity:0} 3%,22%{opacity:1} 23%{opacity:0} }
       @keyframes skeys-T2 { 0%,24%{opacity:0} 25%,44%{opacity:1} 45%{opacity:0} }
       @keyframes skeys-T3 { 0%,46%{opacity:0} 47%,66%{opacity:1} 67%{opacity:0} }
       .sim-module-input { fill: none; stroke: #92400e; stroke-width: 1.5; stroke-dasharray: 5 3; }
-      .sim-module { animation: sim-mod 15s infinite linear; }
+      .sim-module { animation: sim-mod 40s infinite linear; }
       @keyframes sim-mod {
         0%,2%{opacity:0}
         3%,22%{opacity:1} 23%{opacity:0}
@@ -302,18 +302,18 @@
       /* Per-atom opacity timelines — atoms dim (opacity 0.45) when not in the
          current top-k, brighten to 1.0 when selected. Replaces the shared
          g-T1/g-T2/g-T3 reveal keyframes. */
-      .atom-T1-1 { animation: a-T1-1 15s infinite linear; }
-      .atom-T1-2 { animation: a-T1-2 15s infinite linear; }
-      .atom-T1-3 { animation: a-T1-3 15s infinite linear; }
-      .atom-T1-4 { animation: a-T1-4 15s infinite linear; }
-      .atom-T2-1 { animation: a-T2-1 15s infinite linear; }
-      .atom-T2-2 { animation: a-T2-2 15s infinite linear; }
-      .atom-T2-3 { animation: a-T2-3 15s infinite linear; }
-      .atom-T2-4 { animation: a-T2-4 15s infinite linear; }
-      .atom-T3-1 { animation: a-T3-1 15s infinite linear; }
-      .atom-T3-2 { animation: a-T3-2 15s infinite linear; }
-      .atom-T3-3 { animation: a-T3-3 15s infinite linear; }
-      .atom-T3-4 { animation: a-T3-4 15s infinite linear; }
+      .atom-T1-1 { animation: a-T1-1 40s infinite linear; }
+      .atom-T1-2 { animation: a-T1-2 40s infinite linear; }
+      .atom-T1-3 { animation: a-T1-3 40s infinite linear; }
+      .atom-T1-4 { animation: a-T1-4 40s infinite linear; }
+      .atom-T2-1 { animation: a-T2-1 40s infinite linear; }
+      .atom-T2-2 { animation: a-T2-2 40s infinite linear; }
+      .atom-T2-3 { animation: a-T2-3 40s infinite linear; }
+      .atom-T2-4 { animation: a-T2-4 40s infinite linear; }
+      .atom-T3-1 { animation: a-T3-1 40s infinite linear; }
+      .atom-T3-2 { animation: a-T3-2 40s infinite linear; }
+      .atom-T3-3 { animation: a-T3-3 40s infinite linear; }
+      .atom-T3-4 { animation: a-T3-4 40s infinite linear; }
       /* Activation windows mirror each atom's w-T*-* spikes. */
       @keyframes a-T1-1 {
         0%,2%    { opacity: 0; }
@@ -444,15 +444,15 @@
 
       /* Row scaffolding (label, sub, divider) appears just before the row's first atom */
       .row-grow-T1, .row-grow-T2, .row-grow-T3 { opacity: 0; }
-      .row-grow-T1 { animation: row-T1 15s infinite linear; }
-      .row-grow-T2 { animation: row-T2 15s infinite linear; }
-      .row-grow-T3 { animation: row-T3 15s infinite linear; }
+      .row-grow-T1 { animation: row-T1 40s infinite linear; }
+      .row-grow-T2 { animation: row-T2 40s infinite linear; }
+      .row-grow-T3 { animation: row-T3 40s infinite linear; }
       @keyframes row-T1 { 0%,1%{opacity:0}  2%,80%{opacity:1} 82%,100%{opacity:0} }
       @keyframes row-T2 { 0%,23%{opacity:0} 24%,80%{opacity:1} 82%,100%{opacity:0} }
       @keyframes row-T3 { 0%,45%{opacity:0} 46%,80%{opacity:1} 82%,100%{opacity:0} }
 
       /* Task chips: hidden until their phase, highlighted while active, dimmed afterward */
-      .chip-T1, .chip-T2, .chip-T3, .arrow-T2, .arrow-T3 { animation-duration: 15s; animation-iteration-count: infinite; animation-timing-function: linear; }
+      .chip-T1, .chip-T2, .chip-T3, .arrow-T2, .arrow-T3 { animation-duration: 40s; animation-iteration-count: infinite; animation-timing-function: linear; }
       .chip-T1 { animation-name: chip-T1; }
       .chip-T2 { animation-name: chip-T2; }
       .chip-T3 { animation-name: chip-T3; }
@@ -492,14 +492,14 @@
       .atom-icon-snow { fill: #7dd3fc; }
 
       /* Snowflake: visible when atom exists BUT hidden during that atom's fire windows */
-      .atom-icon-snow-T1-1 { animation: sf-T1-1 15s infinite linear; }
-      .atom-icon-snow-T1-2 { animation: sf-T1-2 15s infinite linear; }
-      .atom-icon-snow-T1-3 { animation: sf-T1-3 15s infinite linear; }
-      .atom-icon-snow-T1-4 { animation: sf-T1-4 15s infinite linear; }
-      .atom-icon-snow-T2-12 { animation: sf-T2-12 15s infinite linear; }
-      .atom-icon-snow-T2-rest { animation: g-T2 15s infinite linear; }
-      .atom-icon-snow-T3-12 { animation: sf-T3-12 15s infinite linear; }
-      .atom-icon-snow-T3-rest { animation: g-T3 15s infinite linear; }
+      .atom-icon-snow-T1-1 { animation: sf-T1-1 40s infinite linear; }
+      .atom-icon-snow-T1-2 { animation: sf-T1-2 40s infinite linear; }
+      .atom-icon-snow-T1-3 { animation: sf-T1-3 40s infinite linear; }
+      .atom-icon-snow-T1-4 { animation: sf-T1-4 40s infinite linear; }
+      .atom-icon-snow-T2-12 { animation: sf-T2-12 40s infinite linear; }
+      .atom-icon-snow-T2-rest { animation: g-T2 40s infinite linear; }
+      .atom-icon-snow-T3-12 { animation: sf-T3-12 40s infinite linear; }
+      .atom-icon-snow-T3-rest { animation: g-T3 40s infinite linear; }
       @keyframes sf-T1-1 { 0%,7%{opacity:0} 8%,13%{opacity:1} 14%,17%{opacity:0} 18%,80%{opacity:1} 82%,100%{opacity:0} }
       @keyframes sf-T1-2 { 0%,3%{opacity:0} 4%,8%{opacity:1} 9%,12%{opacity:0} 13%,80%{opacity:1} 82%,100%{opacity:0} }
       @keyframes sf-T1-3 { 0%,3%{opacity:0} 4%,8%{opacity:1} 9%,12%{opacity:0} 13%,18%{opacity:1} 19%,22%{opacity:0} 23%,80%{opacity:1} 82%,100%{opacity:0} }
@@ -508,12 +508,12 @@
       @keyframes sf-T3-12 { 0%,47%{opacity:0} 48%,52%{opacity:1} 53%,56%{opacity:0} 57%,80%{opacity:1} 82%,100%{opacity:0} }
 
       /* Fire: visible only during novel-token training windows per atom */
-      .atom-icon-fire-T1-1 { animation: af-T1-1 15s infinite linear; }
-      .atom-icon-fire-T1-2 { animation: af-T1-2 15s infinite linear; }
-      .atom-icon-fire-T1-3 { animation: af-T1-3 15s infinite linear; }
-      .atom-icon-fire-T1-4 { animation: af-T1-4 15s infinite linear; }
-      .atom-icon-fire-T2-12 { animation: af-T2-12 15s infinite linear; }
-      .atom-icon-fire-T3-12 { animation: af-T3-12 15s infinite linear; }
+      .atom-icon-fire-T1-1 { animation: af-T1-1 40s infinite linear; }
+      .atom-icon-fire-T1-2 { animation: af-T1-2 40s infinite linear; }
+      .atom-icon-fire-T1-3 { animation: af-T1-3 40s infinite linear; }
+      .atom-icon-fire-T1-4 { animation: af-T1-4 40s infinite linear; }
+      .atom-icon-fire-T2-12 { animation: af-T2-12 40s infinite linear; }
+      .atom-icon-fire-T3-12 { animation: af-T3-12 40s infinite linear; }
       /* T1-1: trained by tok-T1-1 (4-7%), tok-T1-3 (14-17%) */
       @keyframes af-T1-1 { 0%,3%{opacity:0} 4%,7%{opacity:1} 8%,13%{opacity:0} 14%,17%{opacity:1} 18%{opacity:0} }
       /* T1-2: trained by tok-T1-2 (9-12%) */
@@ -531,7 +531,7 @@
       .tok-note  { font-size: 21px; font-weight: 600; fill: #92400e; }
       .tok-note-reuse { fill: #6d28d9; }
 
-      .route-note { opacity: 0; animation: route-note 15s infinite linear; }
+      .route-note { opacity: 0; animation: route-note 40s infinite linear; }
       @keyframes route-note {
         0%,24%{opacity:0} 25%,66%{opacity:1} 68%,100%{opacity:0}
       }
@@ -548,18 +548,18 @@
       .route-to-t3 { stroke: #7c3aed; marker-end: url(#route-ah-t3); }
 
       /* All paths for the same token share one keyframe */
-      .route-T1-1a                        { animation: rt-T1-1 15s infinite linear; }
-      .route-T1-2a, .route-T1-2b         { animation: rt-T1-2 15s infinite linear; }
-      .route-T1-3a, .route-T1-3b         { animation: rt-T1-3 15s infinite linear; }
-      .route-T1-4a                        { animation: rt-T1-4 15s infinite linear; }
-      .route-T2-1a, .route-T2-1b         { animation: rt-T2-1 15s infinite linear; }
-      .route-T2-2a                        { animation: rt-T2-2 15s infinite linear; }
-      .route-T2-3a, .route-T2-3b         { animation: rt-T2-3 15s infinite linear; }
-      .route-T2-4a, .route-T2-4b         { animation: rt-T2-4 15s infinite linear; }
-      .route-T3-1a, .route-T3-1b         { animation: rt-T3-1 15s infinite linear; }
-      .route-T3-2a, .route-T3-2b         { animation: rt-T3-2 15s infinite linear; }
-      .route-T3-3a, .route-T3-3b         { animation: rt-T3-3 15s infinite linear; }
-      .route-T3-4a, .route-T3-4b         { animation: rt-T3-4 15s infinite linear; }
+      .route-T1-1a                        { animation: rt-T1-1 40s infinite linear; }
+      .route-T1-2a, .route-T1-2b         { animation: rt-T1-2 40s infinite linear; }
+      .route-T1-3a, .route-T1-3b         { animation: rt-T1-3 40s infinite linear; }
+      .route-T1-4a                        { animation: rt-T1-4 40s infinite linear; }
+      .route-T2-1a, .route-T2-1b         { animation: rt-T2-1 40s infinite linear; }
+      .route-T2-2a                        { animation: rt-T2-2 40s infinite linear; }
+      .route-T2-3a, .route-T2-3b         { animation: rt-T2-3 40s infinite linear; }
+      .route-T2-4a, .route-T2-4b         { animation: rt-T2-4 40s infinite linear; }
+      .route-T3-1a, .route-T3-1b         { animation: rt-T3-1 40s infinite linear; }
+      .route-T3-2a, .route-T3-2b         { animation: rt-T3-2 40s infinite linear; }
+      .route-T3-3a, .route-T3-3b         { animation: rt-T3-3 40s infinite linear; }
+      .route-T3-4a, .route-T3-4b         { animation: rt-T3-4 40s infinite linear; }
 
       @keyframes rt-T1-1 { 0%,3%{opacity:0}   4%,7%{opacity:0.8}   8%{opacity:0} }
       @keyframes rt-T1-2 { 0%,8%{opacity:0}   9%,12%{opacity:0.8}  13%{opacity:0} }
@@ -579,7 +579,7 @@
         fill: #ffffff;
         opacity: 0;
         pointer-events: none;
-        animation: bank-dim 15s infinite linear;
+        animation: bank-dim 40s infinite linear;
       }
       @keyframes bank-dim {
         0%,2%{opacity:0}
@@ -599,17 +599,17 @@
       .glow-t2 { fill: rgba(219,39,119,0.18); stroke: #db2777; }
       .glow-t3 { fill: rgba(124,58,237,0.18); stroke: #7c3aed; }
       /* Updated glow keyframes for new variable top-k mapping */
-      .glow-T1-1 { animation: gl-T1-1 15s infinite linear; }
-      .glow-T1-2 { animation: gl-T1-2 15s infinite linear; }
-      .glow-T1-3 { animation: gl-T1-3 15s infinite linear; }
-      .glow-T1-4 { animation: gl-T1-4 15s infinite linear; }
-      .glow-T2-1 { animation: gl-T2-1 15s infinite linear; }
-      .glow-T2-2 { animation: gl-T2-2 15s infinite linear; }
-      .glow-T2-3 { animation: gl-T2-3 15s infinite linear; }
-      .glow-T3-1 { animation: gl-T3-1 15s infinite linear; }
-      .glow-T3-2 { animation: gl-T3-2 15s infinite linear; }
-      .glow-T3-3 { animation: gl-T3-3 15s infinite linear; }
-      .glow-T3-4 { animation: gl-T3-4 15s infinite linear; }
+      .glow-T1-1 { animation: gl-T1-1 40s infinite linear; }
+      .glow-T1-2 { animation: gl-T1-2 40s infinite linear; }
+      .glow-T1-3 { animation: gl-T1-3 40s infinite linear; }
+      .glow-T1-4 { animation: gl-T1-4 40s infinite linear; }
+      .glow-T2-1 { animation: gl-T2-1 40s infinite linear; }
+      .glow-T2-2 { animation: gl-T2-2 40s infinite linear; }
+      .glow-T2-3 { animation: gl-T2-3 40s infinite linear; }
+      .glow-T3-1 { animation: gl-T3-1 40s infinite linear; }
+      .glow-T3-2 { animation: gl-T3-2 40s infinite linear; }
+      .glow-T3-3 { animation: gl-T3-3 40s infinite linear; }
+      .glow-T3-4 { animation: gl-T3-4 40s infinite linear; }
       /* T1-1: tok-T1-1(4-7), tok-T1-3(14-17), tok-T2-1(26-29), tok-T2-4(41-44), tok-T3-1(48-51) */
       @keyframes gl-T1-1 { 0%,3%{opacity:0} 4%,7%{opacity:.9} 8%,13%{opacity:0} 14%,17%{opacity:.9} 18%,25%{opacity:0} 26%,29%{opacity:.9} 30%,40%{opacity:0} 41%,44%{opacity:.9} 45%,47%{opacity:0} 48%,51%{opacity:.9} 52%{opacity:0} }
       /* T1-2: tok-T1-2(9-12), tok-T2-2(31-34), tok-T3-4(63-66) */
@@ -640,18 +640,18 @@
          T3 phase 44-62%: each token ~4.5% wide
       */
       .tok { opacity: 0; }
-      .tok-T1-1 { animation: tk-T1-1 15s infinite linear; }
-      .tok-T1-2 { animation: tk-T1-2 15s infinite linear; }
-      .tok-T1-3 { animation: tk-T1-3 15s infinite linear; }
-      .tok-T1-4 { animation: tk-T1-4 15s infinite linear; }
-      .tok-T2-1 { animation: tk-T2-1 15s infinite linear; }
-      .tok-T2-2 { animation: tk-T2-2 15s infinite linear; }
-      .tok-T2-3 { animation: tk-T2-3 15s infinite linear; }
-      .tok-T2-4 { animation: tk-T2-4 15s infinite linear; }
-      .tok-T3-1 { animation: tk-T3-1 15s infinite linear; }
-      .tok-T3-2 { animation: tk-T3-2 15s infinite linear; }
-      .tok-T3-3 { animation: tk-T3-3 15s infinite linear; }
-      .tok-T3-4 { animation: tk-T3-4 15s infinite linear; }
+      .tok-T1-1 { animation: tk-T1-1 40s infinite linear; }
+      .tok-T1-2 { animation: tk-T1-2 40s infinite linear; }
+      .tok-T1-3 { animation: tk-T1-3 40s infinite linear; }
+      .tok-T1-4 { animation: tk-T1-4 40s infinite linear; }
+      .tok-T2-1 { animation: tk-T2-1 40s infinite linear; }
+      .tok-T2-2 { animation: tk-T2-2 40s infinite linear; }
+      .tok-T2-3 { animation: tk-T2-3 40s infinite linear; }
+      .tok-T2-4 { animation: tk-T2-4 40s infinite linear; }
+      .tok-T3-1 { animation: tk-T3-1 40s infinite linear; }
+      .tok-T3-2 { animation: tk-T3-2 40s infinite linear; }
+      .tok-T3-3 { animation: tk-T3-3 40s infinite linear; }
+      .tok-T3-4 { animation: tk-T3-4 40s infinite linear; }
 
       @keyframes tk-T1-1 { 0%,2%{opacity:0}   3%,7%{opacity:1}   8%{opacity:0} }
       @keyframes tk-T1-2 { 0%,7%{opacity:0}   8%,12%{opacity:1}  13%{opacity:0} }
@@ -671,7 +671,7 @@
          is training, every one of its atoms shows the fire icon; afterwards
          every one of its atoms shows the snowflake. Hidden before the atoms
          have been added to the bank.
-         Loop windows (15s):
+         Loop windows (40s):
            Task 1 training : 3-22%   Task 1 frozen : 23-80%
            Task 2 training : 25-44%  Task 2 frozen : 45-80%
            Task 3 training : 47-66%  Task 3 frozen : 67-80%
@@ -705,18 +705,18 @@
       .atom-input-t1 { stroke: #ea580c; marker-end: url(#route-ah-t1); }
       .atom-input-t2 { stroke: #db2777; marker-end: url(#route-ah-t2); }
       .atom-input-t3 { stroke: #7c3aed; marker-end: url(#route-ah-t3); }
-      .input-arrow-T1-1 { animation: in-T1-1 15s infinite linear; }
-      .input-arrow-T1-2 { animation: in-T1-2 15s infinite linear; }
-      .input-arrow-T1-3 { animation: in-T1-3 15s infinite linear; }
-      .input-arrow-T1-4 { animation: in-T1-4 15s infinite linear; }
-      .input-arrow-T2-1 { animation: in-T2-1 15s infinite linear; }
-      .input-arrow-T2-2 { animation: in-T2-2 15s infinite linear; }
-      .input-arrow-T2-3 { animation: in-T2-3 15s infinite linear; }
-      .input-arrow-T2-4 { animation: in-T2-4 15s infinite linear; }
-      .input-arrow-T3-1 { animation: in-T3-1 15s infinite linear; }
-      .input-arrow-T3-2 { animation: in-T3-2 15s infinite linear; }
-      .input-arrow-T3-3 { animation: in-T3-3 15s infinite linear; }
-      .input-arrow-T3-4 { animation: in-T3-4 15s infinite linear; }
+      .input-arrow-T1-1 { animation: in-T1-1 40s infinite linear; }
+      .input-arrow-T1-2 { animation: in-T1-2 40s infinite linear; }
+      .input-arrow-T1-3 { animation: in-T1-3 40s infinite linear; }
+      .input-arrow-T1-4 { animation: in-T1-4 40s infinite linear; }
+      .input-arrow-T2-1 { animation: in-T2-1 40s infinite linear; }
+      .input-arrow-T2-2 { animation: in-T2-2 40s infinite linear; }
+      .input-arrow-T2-3 { animation: in-T2-3 40s infinite linear; }
+      .input-arrow-T2-4 { animation: in-T2-4 40s infinite linear; }
+      .input-arrow-T3-1 { animation: in-T3-1 40s infinite linear; }
+      .input-arrow-T3-2 { animation: in-T3-2 40s infinite linear; }
+      .input-arrow-T3-3 { animation: in-T3-3 40s infinite linear; }
+      .input-arrow-T3-4 { animation: in-T3-4 40s infinite linear; }
       /* Binary visibility — mirrors per-atom selection windows. */
       @keyframes in-T1-1 {
         0%,3%{opacity:0} 4%,7%{opacity:0.9} 8%,13%{opacity:0}
@@ -773,12 +773,12 @@
         0%,52%{opacity:0} 53%,56%{opacity:0.9} 57%,62%{opacity:0}
         63%,66%{opacity:0.9} 67%,100%{opacity:0}
       }
-      .fire-batch-T1 { animation: fire-batch-T1 15s infinite linear; }
-      .fire-batch-T2 { animation: fire-batch-T2 15s infinite linear; }
-      .fire-batch-T3 { animation: fire-batch-T3 15s infinite linear; }
-      .snow-batch-T1 { animation: snow-batch-T1 15s infinite linear; }
-      .snow-batch-T2 { animation: snow-batch-T2 15s infinite linear; }
-      .snow-batch-T3 { animation: snow-batch-T3 15s infinite linear; }
+      .fire-batch-T1 { animation: fire-batch-T1 40s infinite linear; }
+      .fire-batch-T2 { animation: fire-batch-T2 40s infinite linear; }
+      .fire-batch-T3 { animation: fire-batch-T3 40s infinite linear; }
+      .snow-batch-T1 { animation: snow-batch-T1 40s infinite linear; }
+      .snow-batch-T2 { animation: snow-batch-T2 40s infinite linear; }
+      .snow-batch-T3 { animation: snow-batch-T3 40s infinite linear; }
       @keyframes fire-batch-T1 { 0%,2%{opacity:0}  3%,22%{opacity:1}  23%,100%{opacity:0} }
       @keyframes fire-batch-T2 { 0%,24%{opacity:0} 25%,44%{opacity:1}  45%,100%{opacity:0} }
       @keyframes fire-batch-T3 { 0%,46%{opacity:0} 47%,66%{opacity:1}  67%,100%{opacity:0} }
@@ -945,14 +945,13 @@
   <g class="module mlp-mod">
     <rect class="module-box" x="255" y="199" width="190" height="62" rx="8"/>
     <text class="module-name" x="270" y="225">MLP</text>
-    <text class="pretrained-label" x="270" y="248">W<tspan font-size="10" baseline-shift="sub">0</tspan><tspan font-size="10" baseline-shift="super">MLP</tspan>  &#x2014;  pre-trained &#x2022; frozen</text>
+    <text class="pretrained-label" x="270" y="248">W<tspan font-size="10" baseline-shift="sub">0</tspan><tspan font-size="10" baseline-shift="super">MLP</tspan>  pre-trained</text>
 
     <!-- BANK M_m — straddles the right edge of the MLP block. Opaque fill
          covers the module border underneath so the overlap reads cleanly. -->
     <g transform="translate(405, 212)">
       <rect class="inline-bank-frame focus" width="84" height="36" rx="6" fill="#fff7ed"/>
       <text class="inline-bank-label" x="42" y="16" text-anchor="middle">BANK <tspan font-style="italic">M</tspan><tspan font-size="9" dy="4" font-style="italic">m</tspan></text>
-      <text class="bank-overlay-sub" x="42" y="28" text-anchor="middle">rank-1 &#x2022; trainable</text>
     </g>
   </g>
 
@@ -963,14 +962,13 @@
        pre-trained W₀^attn; BANK M_a straddles its right edge. -->
   <g class="module attn-mod">
     <rect class="module-box" x="255" y="289" width="190" height="62" rx="8"/>
-    <text class="module-name" x="270" y="366">Attention</text>
-    <text class="pretrained-label" x="270" y="338">W<tspan font-size="10" baseline-shift="sub">0</tspan><tspan font-size="10" baseline-shift="super">attn</tspan>  &#x2014;  pre-trained &#x2022; frozen</text>
+    <text class="module-name" x="270" y="315">Attention</text>
+    <text class="pretrained-label" x="270" y="338">W<tspan font-size="10" baseline-shift="sub">0</tspan><tspan font-size="10" baseline-shift="super">attn</tspan>  pre-trained</text>
 
     <!-- BANK M_a — straddles the right edge of the Attention block -->
     <g transform="translate(405, 302)">
       <rect class="inline-bank-frame" width="84" height="36" rx="6" fill="#fffbeb"/>
       <text class="inline-bank-label" x="42" y="16" text-anchor="middle">BANK <tspan font-style="italic">M</tspan><tspan font-size="9" dy="4" font-style="italic">a</tspan></text>
-      <text class="bank-overlay-sub" x="42" y="28" text-anchor="middle">rank-1 &#x2022; trainable</text>
     </g>
   </g>
 
